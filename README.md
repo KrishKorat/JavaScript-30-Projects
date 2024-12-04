@@ -1,1 +1,1 @@
-# Frontend-Projects
+This repository contains basic frontend projects 
