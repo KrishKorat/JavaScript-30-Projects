@@ -71,6 +71,7 @@
 
 <script>
 
+  // Adds audio and transition class
   window.addEventListener('keydown', (event) => {
 
     // Extracts the audio via keyboard key
@@ -82,11 +83,14 @@
     audio.currentTime = 0; // Renewes the audio if button is pressed again
     audio.play(); // Plays the audio
 
-    key.classList.add('playing');
+
+    key.classList.add('playing'); // Addes transition class
   })
 
 
+  // removes transition
   function removeTransition(event) {
+    // only resposes to 'transform' property
     if (event.propertyName !== 'transform') {
       return;
     } else {
@@ -96,7 +100,8 @@
 
   const keys = document.querySelectorAll('.key');
 
-  keys.forEach((k) => {
+  keys.forEach((k) => { 
+    // removes the transition after time specified in CSS
     k.addEventListener('transitionend', removeTransition);
   })
 </script>
