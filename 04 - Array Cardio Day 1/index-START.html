@@ -44,7 +44,7 @@
         return true;
       } 
     });
-    // console.table(fifteen);
+    console.table(fifteen);
 
 
     // Array.prototype.map()
@@ -52,11 +52,21 @@
     const names = inventors.map(inventor => {
       return `${inventor.first} ${inventor.last}`;
     });
-    // console.log(names);
+    console.log(names);
 
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    const order = inventors.sort((a,b) => {
+
+      if(a.year > b.year) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+    // const order = inventors.sort((a,b) => a.year > b.year ? 1 : -1);
+    console.table(order);
 
 
     // Array.prototype.reduce()
@@ -79,7 +89,7 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
-    
+
   </script>
 </body>
 </html>
