@@ -94,6 +94,13 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    const sortArr = people.sort((firstPerson, secondPerson) => {
+      const [aFirst, bFirst] = firstPerson.split(', ');
+      const [aSecond, bSecond] = secondPerson.split(', ');
+
+      return aFirst > aSecond ? 1 : -1;
+    });
+    console.log(sortArr);
 
 
     // 8. Reduce Exercise
