@@ -109,7 +109,7 @@
       width: 50%;
       background: #ffc600;
       flex: 0;
-      flex-basis: 50%;
+      flex-basis: 0%;
     }
 
     /* unholy css to style input type="range" */
@@ -223,6 +223,11 @@
       video[this.name] = this.value;
     }
 
+    function progressBarFunc() {
+      const percentage = (video.currentTime / video.duration) * 100;
+      progressBar.style.flexBasis = `${percentage}%`;
+    }
+
 
 
     video.addEventListener('click', playPauseVideoWithIcon);
@@ -235,6 +240,8 @@
     ranges.forEach(range => {
       range.addEventListener('change', rangeUpdate);
     });
+
+    video.addEventListener('timeupdate', progressBarFunc);
   </script>
 </body>
 </html>
