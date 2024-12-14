@@ -4,17 +4,28 @@
   <meta charset="UTF-8">
   <title>HTML5 Canvas</title>
   <link rel="icon" href="https://fav.farm/🔥" />
+
+  <style>
+    html, body {
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-<canvas id="draw" width="800" height="800"></canvas>
-<script>
-</script>
+  <canvas id="draw" width="800" height="800"></canvas>
 
-<style>
-  html, body {
-    margin: 0;
-  }
-</style>
+  <script>
 
+    const canvas = document.querySelector('#draw');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    ctx.strokeStyle = '#123456';
+
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+  </script>
 </body>
 </html>
