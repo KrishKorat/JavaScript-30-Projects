@@ -228,6 +228,11 @@
       progressBar.style.flexBasis = `${percentage}%`;
     }
 
+    function scrub(event) {
+      const scrubTime = (event.offsetX / progress.offsetWidth) * video.duration;
+      video.currentTime = scrubTime;
+    }
+
 
 
     video.addEventListener('click', playPauseVideoWithIcon);
@@ -242,6 +247,8 @@
     });
 
     video.addEventListener('timeupdate', progressBarFunc);
+
+    progress.addEventListener('click', scrub);
   </script>
 </body>
 </html>
