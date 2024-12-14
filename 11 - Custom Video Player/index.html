@@ -219,16 +219,22 @@
       video.currentTime += parseFloat(this.dataset.skip);
     }
 
+    function rangeUpdate() {
+      video[this.name] = this.value;
+    }
+
 
 
     video.addEventListener('click', playPauseVideoWithIcon);
     toggle.addEventListener('click', playPauseVideoWithIcon);
 
     skipButtons.forEach(button => {
-      button.addEventListener('click', skip)
+      button.addEventListener('click', skip);
     });
       
-
+    ranges.forEach(range => {
+      range.addEventListener('change', rangeUpdate);
+    });
   </script>
 </body>
 </html>
