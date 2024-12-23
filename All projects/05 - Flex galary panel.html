@@ -125,12 +125,15 @@
 
   <script>
 
+    // Grabs all 5 panels
     const panels = document.querySelectorAll('.panel');
 
+    // Make it wider
     function toggleWiden() {
       this.classList.toggle('open');
     }
 
+    // Make text appear and main text get bigger
     function toggleText(event) {
       if (event.propertyName.includes('flex')) {
         this.classList.toggle('open-active');
