@@ -99,15 +99,22 @@
 
 <script>
   
+  // Grabs all checkboxes
   const checkBoxes = document.querySelectorAll('.inbox input[type="checkbox"]');
 
   let lastChecked;
 
+
+  // Check all checkboxes in between of last checked and current checking (while holding shift key)
+
   function handleCheck(e) {
     let inBetween = false;
     
+    // Activate inBetween if shift key is pressed and checkbox is checked
     if (e.shiftKey && this.checked) {
       
+      // Runs each time and checks if checkbox is between last checked and current checked
+      // If yes, checks the checkbox in between
       checkBoxes.forEach(checkbox => {
         
         if(checkbox === this || checkbox === lastChecked) {
@@ -120,7 +127,7 @@
       });
     }
 
-    lastChecked = this;
+    lastChecked = this; // Set last checked to current checked
   }
 
   checkBoxes.forEach((checkbox) => {
