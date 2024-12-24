@@ -117,6 +117,7 @@
       // If yes, checks the checkbox in between
       checkBoxes.forEach(checkbox => {
         
+        // If checkbox is current checked or last checked, activate inBetween which will check all checkboxes in between
         if(checkbox === this || checkbox === lastChecked) {
           inBetween = !inBetween;
         }
