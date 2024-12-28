@@ -43,6 +43,16 @@
 
   function shadow(e) {
 
+    const width = hero.offsetWidth;
+    const height = hero.offsetHeight;
+
+    let x = e.offsetX;
+    let y = e.offsetY;
+
+    if (this !== e.target) {
+      x = x + e.target.offsetLeft;
+      y = y + e.offsetTop;
+    }
   }
 
   hero.addEventListener('mousemove', shadow);
