@@ -195,7 +195,17 @@
     })
     .reduce((total, eachVideoSecs) => total + eachVideoSecs);
 
-  console.log(seconds);
+
+  let secondsLeft = seconds;
+
+  let hours = Math.floor(secondsLeft / 3600);
+  secondsLeft = secondsLeft % 3600;
+
+  let minutes =Math.floor(secondsLeft / 60);
+  secondsLeft = secondsLeft % 60;
+
+
+  console.log(hours, minutes, secondsLeft);
 </script>
 </body>
 </html>
