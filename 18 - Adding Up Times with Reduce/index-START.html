@@ -192,7 +192,8 @@
     .map(timeStr => {
       const [ min, sec ] = timeStr.split(':').map(parseFloat);
       return (min * 60) + sec;
-    });
+    })
+    .reduce((total, eachVideoSecs) => total + eachVideoSecs);
 
   console.log(seconds);
 </script>
