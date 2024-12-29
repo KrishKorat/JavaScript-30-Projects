@@ -182,7 +182,14 @@
       Video 58
     </li>
   </ul>
+
 <script>
+
+  const timeArr = Array.from(document.querySelectorAll('[data-time]'));
+
+  const seconds = timeArr.map(node => node.dataset.time);
+
+  console.log(seconds);
 </script>
 </body>
 </html>
