@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");
+      background: url("https://media.istockphoto.com/id/1434782845/vector/purple-light-defocused-blurred-motion-gradient-abstract-background-vector.jpg?s=612x612&w=0&k=20&c=XdziynSGjaoVCLk9LI1A70ibGgpUi2IZ23PtkOWdjOM=");
       background-size: cover;
       display: flex;
       align-items: center;
@@ -48,6 +48,17 @@
 <script>
 
   const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+
+
+  const sortedBands = bands.sort((a, b) => {
+    if (a>b) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+
+  console.log(sortedBands);
 
 
 </script>
