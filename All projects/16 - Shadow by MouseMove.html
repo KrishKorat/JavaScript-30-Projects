@@ -1,3 +1,5 @@
+<!-- Creates interactive shadow of an element wherever mouse moves -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,11 +40,15 @@
 
 <script>
 
+  // Grabs both div and heading
   const hero = document.querySelector('.hero');
   const text = hero.querySelector('h1');
 
+  // Length of stretching the shadow
   const walk = 300;
 
+
+  // Creates the shadow
   function shadow(e) {
 
     const width = hero.offsetWidth;
@@ -68,6 +74,7 @@
     `;
   }
 
+  // Triggers the shadow effect when moving mouse
   hero.addEventListener('mousemove', shadow);
 
 </script>
