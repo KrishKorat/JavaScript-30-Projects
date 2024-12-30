@@ -1,3 +1,5 @@
+<!-- Adds the time of all video in the playlist and displays it into hour:minute:second format -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -185,27 +187,39 @@
 
 <script>
 
+  // Grabbing all video's time data as nodeList
   const timeArr = Array.from(document.querySelectorAll('[data-time]'));
 
+   
   const seconds = timeArr
+
+    // 1. extracting time as arr of string
     .map(node => node.dataset.time)
+
+    // 2. spliting minutes and second, then convering both into seconds
     .map(timeStr => {
-      const [ min, sec ] = timeStr.split(':').map(parseFloat);
+      const [ min, sec ] = timeStr.split(':').map(parseFloat); // parseFloat -> converts str into num
       return (min * 60) + sec;
     })
+
+    // 3. suming all seconds
     .reduce((total, eachVideoSecs) => total + eachVideoSecs);
+
 
 
   let secondsLeft = seconds;
 
+  // converting seconds into hours, then extracting remaining seconds
   let hours = Math.floor(secondsLeft / 3600);
   secondsLeft = secondsLeft % 3600;
 
-  let minutes =Math.floor(secondsLeft / 60);
+  // converting seconds into minutes, then extracting remaining seconds
+  let minutes = Math.floor(secondsLeft / 60);
   secondsLeft = secondsLeft % 60;
 
 
   console.log(hours, minutes, secondsLeft);
+  
 </script>
 </body>
 </html>
