@@ -220,7 +220,7 @@
         video.pause();
       }
 
-      toggle.textContent = icon;
+      toggle.textContent = icon; // inserts icon (similar to innerHTML)
     }
 
     video.addEventListener('click', playPauseVideoWithIcon); // Works when clicking on video
