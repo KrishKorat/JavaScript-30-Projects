@@ -63,7 +63,7 @@
   const words = document.querySelector('.words');
   words.appendChild(p);
 
-  recognition.addEventListener('results', e => {
+  recognition.addEventListener('result', e => {
 
     const transript = Array.from(e.results)
       .map(result => result[0])
@@ -71,8 +71,6 @@
       .join('');
 
     p.textContent = transcript;
-
-    console.log(transript);
 
     if(e.result[0].isFinal) {
       p = document.createElement('p');
