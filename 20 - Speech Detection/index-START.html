@@ -64,6 +64,11 @@
 
   recoginition.addEventListner('results', e => {
 
+    const transript = Array.from(e.results)
+      .map(result => result[0])
+      .map(result => result.transript)
+      .join('')
+
   });
 
   recoginition.start();
