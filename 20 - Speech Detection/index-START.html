@@ -71,6 +71,11 @@
 
     p.textContent = transcript;
 
+    if(e.result[0].isFinal) {
+      p = document.createElement('p');
+      words.appendChild(p);
+    }
+
   });
 
   recoginition.addEventListner('end', recoginition.start);
