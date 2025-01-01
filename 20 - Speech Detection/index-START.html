@@ -55,6 +55,19 @@
   
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+  const recoginition = new SpeechRecognition();
+  recoginition.interimResults = true;
+
+  let p = document.createElement('p');
+  const words = document.querySelector('.words');
+  words.appendChild(p);
+
+  recoginition.addEventListner('results', e => {
+
+  });
+
+  recoginition.start();
+
 
 </script>
 
