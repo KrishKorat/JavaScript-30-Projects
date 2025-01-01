@@ -67,9 +67,13 @@
     const transript = Array.from(e.results)
       .map(result => result[0])
       .map(result => result.transript)
-      .join('')
+      .join('');
+
+    p.textContent = transcript;
 
   });
+
+  recoginition.addEventListner('end', recoginition.start);
 
   recoginition.start();
 
