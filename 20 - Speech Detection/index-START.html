@@ -55,14 +55,15 @@
   
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-  const recoginition = new SpeechRecognition();
-  recoginition.interimResults = true;
+  const recognition = new SpeechRecognition();
+  recognition.interimResults = true;
+  recognition.lang = 'en-US';
 
   let p = document.createElement('p');
   const words = document.querySelector('.words');
   words.appendChild(p);
 
-  recoginition.addEventListner('results', e => {
+  recognition.addEventListener('results', e => {
 
     const transript = Array.from(e.results)
       .map(result => result[0])
@@ -71,6 +72,8 @@
 
     p.textContent = transcript;
 
+    console.log(transript);
+
     if(e.result[0].isFinal) {
       p = document.createElement('p');
       words.appendChild(p);
@@ -78,9 +81,9 @@
 
   });
 
-  recoginition.addEventListner('end', recoginition.start);
+  recognition.addEventListener('end', recognition.start);
 
-  recoginition.start();
+  recognition.start();
 
 
 </script>
