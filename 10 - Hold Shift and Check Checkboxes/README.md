@@ -1,1 +1,1 @@
-This project contains feature which is 'when you hold shift and checks a checkbox then all the checkboxes between current clicked & last checked-box gets checked'
+This project contains feature which is 'when you checks a checkbox while holding shift, then all the checkboxes between current clicked & last checked-box gets checked'
