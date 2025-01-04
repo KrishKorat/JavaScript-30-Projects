@@ -1,7 +1,5 @@
 This is media player project. 
-
-<br><hr>
-
+<hr>
 Features are : <br>
   - Plays & Pauses the video   <br>
   - Skip the video to specific timeframe via video-bar   <br>
