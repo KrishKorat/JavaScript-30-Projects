@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="https://fav.farm/✅" />
+  <link rel="icon" href="https://fav.farm/🔥" />
+  <link rel="stylesheet" href="style.css" />
+  
 </head>
 <body>
 
-
+  <!-- Buttons -->
   <div class="keys">
 
     <div data-key="65" class="key">
@@ -58,7 +59,7 @@
 
   </div>
 
-  
+  <!-- Audios -->
   <audio data-key="65" src="sounds/clap.wav"></audio>
   <audio data-key="83" src="sounds/hihat.wav"></audio>
   <audio data-key="68" src="sounds/kick.wav"></audio>
@@ -69,26 +70,7 @@
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
-<script>
-  function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
-  }
-
-  function playSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-    if (!audio) return;
-
-    key.classList.add('playing');
-    audio.currentTime = 0;
-    audio.play();
-  }
-
-  const keys = Array.from(document.querySelectorAll('.key'));
-  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-  window.addEventListener('keydown', playSound);
-</script>
+<script src="script.js"></script>
 
 
 </body>
