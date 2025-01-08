@@ -3,24 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <title>Key Detection</title>
-    <script type="text/javascript" src="./cornify.js"></script>
+    <!-- <script type="text/javascript" src="./cornify.js"></script> -->
     <link rel="icon" href="https://fav.farm/🔥" />
   </head>
   <body>
     <script>
+
+      // Something happens when you write secretCode
 
       const pressed = [];
       const secretCode = 'ferrari';
 
       window.addEventListener('keyup', (event) => {
 
-        pressed.push(event.key);
+        pressed.push(event.key); // Key value pushed each time
 
-        pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+        pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length); // Key value gets removed from 7 places ago (-8th index)
 
         if (pressed.join('').includes(secretCode)) {
           console.log('Forza Ferrari!!');
-          cornify_add();
+          // cornify_add();
         }
 
         console.log(pressed);
