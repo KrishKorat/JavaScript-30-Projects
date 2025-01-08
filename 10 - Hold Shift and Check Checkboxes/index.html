@@ -4,51 +4,7 @@
   <meta charset="UTF-8">
   <title>Hold Shift to Check Multiple Checkboxes</title>
   <link rel="icon" href="https://fav.farm/🔥" />
-  <style>
-
-    html {
-      font-family: sans-serif;
-      background: #ffc600;
-    }
-
-    .inbox {
-      max-width: 400px;
-      margin: 50px auto;
-      background: white;
-      border-radius: 5px;
-      box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-    }
-
-    .item {
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid #F1F1F1;
-    }
-
-    .item:last-child {
-      border-bottom: 0;
-    }
-
-    input:checked + p {
-      background: #F9F9F9;
-      text-decoration: line-through;
-    }
-
-    input[type="checkbox"] {
-      margin: 20px;
-    }
-
-    p {
-      margin: 0;
-      padding: 20px;
-      transition: background 0.2s;
-      flex: 1;
-      font-family:'helvetica neue';
-      font-size: 20px;
-      font-weight: 200;
-      border-left: 1px solid #D1E2FF;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   
@@ -99,17 +55,25 @@
 
 <script>
   
+  // Grabs all checkboxes
   const checkBoxes = document.querySelectorAll('.inbox input[type="checkbox"]');
 
   let lastChecked;
 
+
+  // Check all checkboxes in between of last checked and current checking (while holding shift key)
+
   function handleCheck(e) {
     let inBetween = false;
     
+    // Activate inBetween if shift key is pressed and checkbox is checked
     if (e.shiftKey && this.checked) {
       
+      // Runs each time and checks if checkbox is between last checked and current checked
+      // If yes, checks the checkbox in between
       checkBoxes.forEach(checkbox => {
         
+        // If checkbox is current checked or last checked, activate inBetween which will check all checkboxes in between
         if(checkbox === this || checkbox === lastChecked) {
           inBetween = !inBetween;
         }
@@ -120,7 +84,7 @@
       });
     }
 
-    lastChecked = this;
+    lastChecked = this; // Set last checked to current checked
   }
 
   checkBoxes.forEach((checkbox) => {
