@@ -64,7 +64,7 @@ video.addEventListener('timeupdate', progressBarFunc);
 
 
 
-// Enables to skip in the video using progress bae
+// Enables to skip in the video using progress bar
 
 function scrub(event) {
   const scrubTime = (event.offsetX / progress.offsetWidth) * video.duration;
